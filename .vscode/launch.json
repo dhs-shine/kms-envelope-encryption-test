@@ -2,10 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "OCI KMS encryption/description",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "name": "AWS KMS encryption/description",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main-aws.py",
             "console": "integratedTerminal",
             "envFile": "${workspaceFolder}/.env"
         }
