@@ -1,0 +1,215 @@
+[ubuntu@instance-20220920-0938]$  cd /home/ubuntu/sandbox ; /usr/bin/env /home/ubuntu/sandbox/.venv/bin/python /home/ubuntu/.vscode-server/extensions/ms-python.debugpy-2025.8.0-linux-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher 49577 -- /home/ubuntu/sandbox/main_aws.py 
+원본 텍스트 크기: 5621 bytes
+
+=== 원본 텍스트 ===
+인공지능과 머신러닝의 발전은 현대 사회에 큰 변화를 가져왔습니다. 
+딥러닝 기술의 발전으로 이미지 인식, 자연어 처리, 음성 인식 등 다양한 분야에서 혁신적인 성과를 이루고 있습니다.
+이러한 기술 발전은 우리의 일상생활에도 큰 영향을 미치고 있으며, 앞으로도 계속해서 발전할 것으로 예상됩니다.
+
+클라우드 컴퓨팅의 발전은 기업들의 IT 인프라 구축 방식을 완전히 바꾸어 놓았습니다.
+서버리스 아키텍처, 컨테이너 기술, 마이크로서비스 등 새로운 기술들이 등장하면서 
+시스템 구축과 운영 방식이 더욱 효율적이고 유연해졌습니다.
+
+보안 기술의 발전은 디지털 전환 시대에 필수적인 요소가 되었습니다.
+암호화 기술, 블록체인, 양자 암호화 등 새로운 보안 기술들이 등장하면서 
+데이터 보호와 개인정보 보호의 중요성이 더욱 커지고 있습니다.
+
+빅데이터 분석 기술의 발전은 의사결정 과정을 데이터 기반으로 변화시켰습니다.
+실시간 데이터 처리, 예측 분석, 머신러닝 기반 의사결정 등이 
+기업의 경쟁력을 결정하는 중요한 요소가 되었습니다.
+
+사물인터넷(IoT) 기술의 발전은 우리 주변의 모든 사물을 연결하고 있습니다.
+스마트 홈, 스마트 시티, 산업용 IoT 등 다양한 분야에서 
+연결성과 자동화가 확대되고 있습니다.
+
+5G와 6G 통신 기술의 발전은 초고속, 초저지연, 초연결을 실현하고 있습니다.
+증강현실(AR), 가상현실(VR), 메타버스 등 새로운 서비스들이 
+이러한 통신 기술을 기반으로 발전하고 있습니다.
+
+블록체인 기술은 분산 원장 기술로서 신뢰성 있는 거래를 가능하게 합니다.
+암호화폐, 스마트 컨트랙트, 분산 금융(DeFi) 등이 
+블록체인 기술을 기반으로 발전하고 있습니다.
+
+양자 컴퓨팅 기술의 발전은 컴퓨팅의 패러다임을 바꿀 것으로 예상됩니다.
+양자 암호화, 양자 시뮬레이션, 양자 머신러닝 등이 
+새로운 컴퓨팅 시대를 열어갈 것입니다.
+
+로봇공학의 발전은 자동화와 지능화를 더욱 가속화하고 있습니다.
+산업용 로봇, 서비스 로봇, 협동 로봇 등이 
+다양한 분야에서 활용되고 있습니다.
+
+바이오테크놀로지의 발전은 의료와 건강 분야에 혁신을 가져오고 있습니다.
+유전자 편집, 맞춤형 의료, 디지털 헬스케어 등이 
+인간의 건강과 수명 연장에 기여하고 있습니다.
+
+이러한 기술들의 발전은 서로 융합되면서 더욱 혁신적인 변화를 만들어내고 있습니다.
+인공지능과 빅데이터의 결합, IoT와 5G의 결합, 
+블록체인과 양자 컴퓨팅의 결합 등이 새로운 가능성을 만들어내고 있습니다.
+
+기업들은 이러한 기술 변화에 대응하기 위해 디지털 전환을 가속화하고 있습니다.
+클라우드 마이그레이션, 데이터 기반 의사결정, 
+자동화와 지능화를 통한 효율성 향상 등이 진행되고 있습니다.
+
+정부와 공공기관도 디지털 전환을 통해 서비스 혁신을 추진하고 있습니다.
+스마트 시티, 디지털 정부, 공공 데이터 활용 등이 
+시민들의 삶의 질 향상에 기여하고 있습니다.
+
+교육 분야에서도 디지털 전환이 활발하게 진행되고 있습니다.
+온라인 교육, AI 기반 맞춤형 학습, 
+가상현실 기반 교육 등이 새로운 교육 방식을 만들어내고 있습니다.
+
+의료 분야에서는 디지털 헬스케어가 빠르게 발전하고 있습니다.
+원격 진료, AI 기반 진단, 
+개인 맞춤형 의료 등이 의료 서비스의 혁신을 이끌고 있습니다.
+
+금융 분야에서는 핀테크가 금융 서비스의 혁신을 주도하고 있습니다.
+모바일 뱅킹, 암호화폐, 분산 금융 등이 
+새로운 금융 서비스의 형태를 만들어내고 있습니다.
+
+제조업 분야에서는 스마트 팩토리가 산업 혁신을 이끌고 있습니다.
+자동화, IoT, AI 등이 결합된 스마트 제조 시스템이 
+생산성과 효율성을 크게 향상시키고 있습니다.
+
+유통 분야에서는 전자상거래가 새로운 형태로 발전하고 있습니다.
+모바일 커머스, 소셜 커머스, 라이브 커머스 등이 
+소비자들의 쇼핑 경험을 변화시키고 있습니다.
+
+엔터테인먼트 분야에서는 메타버스가 새로운 가능성을 열고 있습니다.
+가상현실, 증강현실, 블록체인 등이 결합된 
+새로운 형태의 엔터테인먼트가 등장하고 있습니다.
+
+이러한 기술 발전과 디지털 전환은 우리의 삶을 크게 변화시키고 있습니다.
+더욱 편리하고 효율적인 생활, 
+새로운 형태의 일과 여가, 
+더 나은 의료와 교육 서비스 등이 
+디지털 기술을 통해 실현되고 있습니다.
+
+앞으로도 기술 발전은 계속될 것이며, 
+이에 따른 사회 변화도 더욱 가속화될 것입니다.
+우리는 이러한 변화에 능동적으로 대응하고, 
+기회를 포착하여 새로운 가치를 창출해야 합니다.
+
+디지털 전환 시대에 필요한 역량을 갖추고, 
+지속적인 학습과 혁신을 통해 
+미래를 준비해야 합니다.
+
+기술 발전이 가져오는 변화를 두려워하지 말고, 
+이를 기회로 삼아 
+새로운 가능성을 탐색해야 합니다.
+
+우리 모두가 디지털 전환의 주체가 되어 
+더 나은 미래를 만들어가야 합니다.
+
+암호화 소요시간: 0.109초
+암호화된 데이터 크기: 7939 bytes
+
+=== 암호화된 데이터 ===
+{
+    "encrypted_data": "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",
+    "encrypted_dek": "AQIDAHhXd67zX90fx2z2GP32qPZoz+Xfes/N3b+mGJXp7OCs+AHgau2AdU5OWZQkD5IfktClAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMlqACoVjei/Ga+P0mAgEQgDuXYxfBtPc2/S+MjoBJKkoupFZ3ayDc5v57JZTkBPUU6039L2IgfBAS5Bb2luM00XywdUp5V8afbSMt3w==",
+    "key_id": "arn:aws:kms:ap-northeast-2:328781241217:key/64eaa474-0f0f-4faa-9b0d-842fe8d510a9"
+}
+
+복호화 소요시간: 0.011초
+복호화된 데이터 크기: 5621 bytes
+
+복호화된 텍스트가 원본과 동일한지 확인: True
+
+=== 복호화된 텍스트 ===
+인공지능과 머신러닝의 발전은 현대 사회에 큰 변화를 가져왔습니다. 
+딥러닝 기술의 발전으로 이미지 인식, 자연어 처리, 음성 인식 등 다양한 분야에서 혁신적인 성과를 이루고 있습니다.
+이러한 기술 발전은 우리의 일상생활에도 큰 영향을 미치고 있으며, 앞으로도 계속해서 발전할 것으로 예상됩니다.
+
+클라우드 컴퓨팅의 발전은 기업들의 IT 인프라 구축 방식을 완전히 바꾸어 놓았습니다.
+서버리스 아키텍처, 컨테이너 기술, 마이크로서비스 등 새로운 기술들이 등장하면서 
+시스템 구축과 운영 방식이 더욱 효율적이고 유연해졌습니다.
+
+보안 기술의 발전은 디지털 전환 시대에 필수적인 요소가 되었습니다.
+암호화 기술, 블록체인, 양자 암호화 등 새로운 보안 기술들이 등장하면서 
+데이터 보호와 개인정보 보호의 중요성이 더욱 커지고 있습니다.
+
+빅데이터 분석 기술의 발전은 의사결정 과정을 데이터 기반으로 변화시켰습니다.
+실시간 데이터 처리, 예측 분석, 머신러닝 기반 의사결정 등이 
+기업의 경쟁력을 결정하는 중요한 요소가 되었습니다.
+
+사물인터넷(IoT) 기술의 발전은 우리 주변의 모든 사물을 연결하고 있습니다.
+스마트 홈, 스마트 시티, 산업용 IoT 등 다양한 분야에서 
+연결성과 자동화가 확대되고 있습니다.
+
+5G와 6G 통신 기술의 발전은 초고속, 초저지연, 초연결을 실현하고 있습니다.
+증강현실(AR), 가상현실(VR), 메타버스 등 새로운 서비스들이 
+이러한 통신 기술을 기반으로 발전하고 있습니다.
+
+블록체인 기술은 분산 원장 기술로서 신뢰성 있는 거래를 가능하게 합니다.
+암호화폐, 스마트 컨트랙트, 분산 금융(DeFi) 등이 
+블록체인 기술을 기반으로 발전하고 있습니다.
+
+양자 컴퓨팅 기술의 발전은 컴퓨팅의 패러다임을 바꿀 것으로 예상됩니다.
+양자 암호화, 양자 시뮬레이션, 양자 머신러닝 등이 
+새로운 컴퓨팅 시대를 열어갈 것입니다.
+
+로봇공학의 발전은 자동화와 지능화를 더욱 가속화하고 있습니다.
+산업용 로봇, 서비스 로봇, 협동 로봇 등이 
+다양한 분야에서 활용되고 있습니다.
+
+바이오테크놀로지의 발전은 의료와 건강 분야에 혁신을 가져오고 있습니다.
+유전자 편집, 맞춤형 의료, 디지털 헬스케어 등이 
+인간의 건강과 수명 연장에 기여하고 있습니다.
+
+이러한 기술들의 발전은 서로 융합되면서 더욱 혁신적인 변화를 만들어내고 있습니다.
+인공지능과 빅데이터의 결합, IoT와 5G의 결합, 
+블록체인과 양자 컴퓨팅의 결합 등이 새로운 가능성을 만들어내고 있습니다.
+
+기업들은 이러한 기술 변화에 대응하기 위해 디지털 전환을 가속화하고 있습니다.
+클라우드 마이그레이션, 데이터 기반 의사결정, 
+자동화와 지능화를 통한 효율성 향상 등이 진행되고 있습니다.
+
+정부와 공공기관도 디지털 전환을 통해 서비스 혁신을 추진하고 있습니다.
+스마트 시티, 디지털 정부, 공공 데이터 활용 등이 
+시민들의 삶의 질 향상에 기여하고 있습니다.
+
+교육 분야에서도 디지털 전환이 활발하게 진행되고 있습니다.
+온라인 교육, AI 기반 맞춤형 학습, 
+가상현실 기반 교육 등이 새로운 교육 방식을 만들어내고 있습니다.
+
+의료 분야에서는 디지털 헬스케어가 빠르게 발전하고 있습니다.
+원격 진료, AI 기반 진단, 
+개인 맞춤형 의료 등이 의료 서비스의 혁신을 이끌고 있습니다.
+
+금융 분야에서는 핀테크가 금융 서비스의 혁신을 주도하고 있습니다.
+모바일 뱅킹, 암호화폐, 분산 금융 등이 
+새로운 금융 서비스의 형태를 만들어내고 있습니다.
+
+제조업 분야에서는 스마트 팩토리가 산업 혁신을 이끌고 있습니다.
+자동화, IoT, AI 등이 결합된 스마트 제조 시스템이 
+생산성과 효율성을 크게 향상시키고 있습니다.
+
+유통 분야에서는 전자상거래가 새로운 형태로 발전하고 있습니다.
+모바일 커머스, 소셜 커머스, 라이브 커머스 등이 
+소비자들의 쇼핑 경험을 변화시키고 있습니다.
+
+엔터테인먼트 분야에서는 메타버스가 새로운 가능성을 열고 있습니다.
+가상현실, 증강현실, 블록체인 등이 결합된 
+새로운 형태의 엔터테인먼트가 등장하고 있습니다.
+
+이러한 기술 발전과 디지털 전환은 우리의 삶을 크게 변화시키고 있습니다.
+더욱 편리하고 효율적인 생활, 
+새로운 형태의 일과 여가, 
+더 나은 의료와 교육 서비스 등이 
+디지털 기술을 통해 실현되고 있습니다.
+
+앞으로도 기술 발전은 계속될 것이며, 
+이에 따른 사회 변화도 더욱 가속화될 것입니다.
+우리는 이러한 변화에 능동적으로 대응하고, 
+기회를 포착하여 새로운 가치를 창출해야 합니다.
+
+디지털 전환 시대에 필요한 역량을 갖추고, 
+지속적인 학습과 혁신을 통해 
+미래를 준비해야 합니다.
+
+기술 발전이 가져오는 변화를 두려워하지 말고, 
+이를 기회로 삼아 
+새로운 가능성을 탐색해야 합니다.
+
+우리 모두가 디지털 전환의 주체가 되어 
+더 나은 미래를 만들어가야 합니다.
