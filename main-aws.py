@@ -142,8 +142,8 @@ async def encryption(data_to_encrypt_bytes: bytes, key_id: str):
 # DEK 생성 함수
 async def generate_dek(key_id: str):
     # AWS KMS 클라이언트 생성
-    region_name = os.environ.get("AWS_REGION")
-    kms_client = boto3.client('kms', region_name=region_name)
+    session = boto3.Session()
+    kms_client = session.client('kms')
 
     # KMS를 사용하여 DEK 생성
     response = kms_client.generate_data_key(
@@ -169,8 +169,8 @@ async def decryption(envelope_json: str):
     iv = base64.b64decode(iv_b64)
 
     # AWS KMS 클라이언트 생성
-    region_name = os.environ.get("AWS_REGION")
-    kms_client = boto3.client('kms', region_name=region_name)
+    session = boto3.Session()
+    kms_client = session.client('kms')
 
     # KMS를 사용하여 DEK 복호화
     response = kms_client.decrypt(
@@ -196,7 +196,7 @@ async def decryption(envelope_json: str):
 async def main():
     load_dotenv()
     key_id = os.environ.get("AWS_KMS_KEY_ID")
-    region_name = os.environ.get("AWS_REGION")
+    # region_name = os.environ.get("AWS_REGION") # 더 이상 사용되지 않음
 
     # 긴 텍스트 생성
     data_to_encrypt_bytes = generate_long_text()
