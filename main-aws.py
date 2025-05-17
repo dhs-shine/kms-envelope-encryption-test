@@ -118,19 +118,19 @@ async def encryption(data_to_encrypt_bytes: bytes, key_id: str):
     # DEK 생성
     encrypted_dek, plaintext_dek = await generate_dek(key_id)
 
-    # DEK를 사용하여 데이터 암호화
-    iv = os.urandom(16)
-    padder = padding.PKCS7(algorithms.AES.block_size).padder()
-    padded_data = padder.update(data_to_encrypt_bytes) + padder.finalize()
-    cipher = Cipher(algorithms.AES(plaintext_dek), modes.CBC(iv), backend=default_backend())
+    # DEK를 사용하여 데이터 암호화 (GCM 모드)
+    iv = os.urandom(12)
+    cipher = Cipher(algorithms.AES(plaintext_dek), modes.GCM(iv), backend=default_backend())
     encryptor = cipher.encryptor()
-    ciphertext = encryptor.update(padded_data) + encryptor.finalize()
+    ciphertext = encryptor.update(data_to_encrypt_bytes) + encryptor.finalize()
+    tag = encryptor.tag
 
-    # 암호화된 데이터와 암호화된 DEK를 JSON으로 구조화
+    # 암호화된 데이터, 암호화된 DEK 및 GCM 태그를 JSON으로 구조화
     envelope = {
         "encrypted_data": base64.b64encode(ciphertext).decode('utf-8'),
         "encrypted_dek": base64.b64encode(encrypted_dek).decode('utf-8'),
         "iv": base64.b64encode(iv).decode('utf-8'),
+        "tag": base64.b64encode(tag).decode('utf-8'),
         "key_id": key_id
     }
 
@@ -180,18 +180,18 @@ async def decryption(envelope_json: str):
 
     plaintext_dek = response['Plaintext']
 
-    # DEK를 사용하여 데이터 복호화
-    cipher = Cipher(algorithms.AES(plaintext_dek), modes.CBC(iv), backend=default_backend())
+    # GCM 태그 가져오기
+    tag = base64.b64decode(envelope["tag"])
+
+    # DEK를 사용하여 데이터 복호화 (GCM 모드)
+    cipher = Cipher(algorithms.AES(plaintext_dek), modes.GCM(iv, tag), backend=default_backend())
     decryptor = cipher.decryptor()
     decrypted_data = decryptor.update(ciphertext) + decryptor.finalize()
-
-    unpadder = padding.PKCS7(algorithms.AES.block_size).unpadder()
-    unpadded_data = unpadder.update(decrypted_data) + unpadder.finalize()
 
     end_time = time.time()
     decryption_time = end_time - start_time
 
-    return unpadded_data, decryption_time
+    return decrypted_data, decryption_time
 
 async def main():
     load_dotenv()
