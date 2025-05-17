@@ -211,8 +211,8 @@ async def decryption(envelope_json: str, config, service_endpoint):
 async def main():
     load_dotenv()
     config = oci.config.from_file()
-    key_id = os.environ.get("KEY_ID")
-    service_endpoint = os.environ.get("SERVICE_ENDPOINT")
+    key_id = os.environ.get("KMS_MASTER_KEY_ID")
+    service_endpoint = os.environ.get("KMS_CRYPTO_ENDPOINT")
     
     # 긴 텍스트 생성
     data_to_encrypt_bytes = generate_long_text()
