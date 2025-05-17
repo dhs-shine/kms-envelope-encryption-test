@@ -3,16 +3,31 @@ import os
 import asyncio
 import base64
 from dotenv import load_dotenv
-from common import KMSClient, main
+from common import KMSClient, main, create_kms_client
 
 class OCIKMSClient(KMSClient):
-    def __init__(self, config, service_endpoint):
-        self.config = config
-        self.service_endpoint = service_endpoint
+    def __init__(self):
+        # OCI 설정 로드
+        self.config = oci.config.from_file()
+        
+        # 환경 변수에서 필요한 설정 로드
+        self._service_endpoint = os.environ.get('OCI_KMS_CRYPTO_ENDPOINT')
+        if not self._service_endpoint:
+            raise ValueError("OCI_KMS_CRYPTO_ENDPOINT 환경변수가 설정되지 않았습니다.")
+            
+        self._key_id = os.environ.get('OCI_KMS_KEY_ID')
+        if not self._key_id:
+            raise ValueError("OCI_KMS_KEY_ID 환경변수가 설정되지 않았습니다.")
+
+        # KMS 클라이언트 초기화
         self.crypto_client = oci.key_management.KmsCryptoClient(
-            config,
-            service_endpoint=service_endpoint
+            self.config,
+            service_endpoint=self._service_endpoint
         )
+
+    def get_key_id(self) -> str:
+        """OCI KMS 키 ID를 반환"""
+        return self._key_id
 
     async def generate_dek(self, key_id: str):
         """OCI KMS를 사용하여 DEK 생성 및 암호화"""
@@ -46,22 +61,10 @@ class OCIKMSClient(KMSClient):
 async def amain():
     load_dotenv()
     
-    # OCI 설정 로드
-    config = oci.config.from_file()
-    
-    # KMS 서비스 엔드포인트와 키 ID
-    service_endpoint = os.environ.get('OCI_KMS_CRYPTO_ENDPOINT')
-    if not service_endpoint:
-        raise ValueError("OCI_KMS_CRYPTO_ENDPOINT 환경변수가 설정되지 않았습니다.")
-    
-    key_id = os.environ.get('OCI_KMS_KEY_ID')
-    if not key_id:
-        raise ValueError("OCI_KMS_KEY_ID 환경변수가 설정되지 않았습니다.")
-    
     # KMS 클라이언트 생성
-    kms_client = OCIKMSClient(config, service_endpoint)
+    kms_client = create_kms_client('oci')
     
-    await main(kms_client, lambda: key_id)
+    await main(kms_client)
 
 if __name__ == "__main__":
     asyncio.run(amain())

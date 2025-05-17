@@ -135,6 +135,32 @@ class KMSClient(ABC):
         """암호화된 데이터를 복호화하는 메서드"""
         pass
 
+    @abstractmethod
+    def get_key_id(self) -> str:
+        """KMS 키 ID를 반환하는 메서드"""
+        pass
+
+def create_kms_client(provider: str) -> KMSClient:
+    """KMS 클라이언트를 생성하는 팩토리 함수
+    
+    Args:
+        provider: KMS 제공자 ('aws' 또는 'oci')
+    
+    Returns:
+        KMSClient: 생성된 KMS 클라이언트 인스턴스
+    
+    Raises:
+        ValueError: 지원하지 않는 provider가 지정된 경우
+    """
+    if provider.lower() == 'aws':
+        from main_aws import AWSKMSClient
+        return AWSKMSClient()
+    elif provider.lower() == 'oci':
+        from main_oci import OCIKMSClient
+        return OCIKMSClient()
+    else:
+        raise ValueError(f"지원하지 않는 KMS 제공자입니다: {provider}")
+
 # 암호화 함수
 async def encryption(data_to_encrypt_bytes: bytes, kms_client: KMSClient, key_id: str):
     """KMS를 사용한 봉투암호화 함수"""
@@ -193,9 +219,9 @@ async def decryption(envelope_json: str, kms_client: KMSClient):
     return decrypted_data, decryption_time
 
 # 공통 main 함수
-async def main(kms_client: KMSClient, get_key_id_func):
+async def main(kms_client: KMSClient):
     load_dotenv()
-    key_id = get_key_id_func()
+    key_id = kms_client.get_key_id()
 
     # 긴 텍스트 생성
     data_to_encrypt_bytes = generate_long_text()

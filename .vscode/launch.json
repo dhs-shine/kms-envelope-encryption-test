@@ -5,7 +5,7 @@
             "name": "OCI KMS encryption/description",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/main-oci.py",
+            "program": "${workspaceFolder}/main_oci.py",
             "console": "integratedTerminal",
             "envFile": "${workspaceFolder}/.env"
         },
@@ -13,7 +13,7 @@
             "name": "AWS KMS encryption/description",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/main-aws.py",
+            "program": "${workspaceFolder}/main_aws.py",
             "console": "integratedTerminal",
             "envFile": "${workspaceFolder}/.env"
         }
