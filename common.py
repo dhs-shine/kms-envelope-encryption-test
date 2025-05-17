@@ -191,7 +191,7 @@ async def encryption(data_to_encrypt_bytes: bytes, kms_client: KMSClient, key_id
     end_time = time.time()
     encryption_time = end_time - start_time
     
-    return json.dumps(envelope), encryption_time
+    return json.dumps(envelope, indent=4), encryption_time
 
 # 복호화 함수
 async def decryption(envelope_json: str, kms_client: KMSClient):
@@ -233,6 +233,8 @@ async def main(kms_client: KMSClient):
     envelope_json, encryption_time = await encryption(data_to_encrypt_bytes, kms_client, key_id)
     print(f"\n암호화 소요시간: {encryption_time:.3f}초")
     print(f"암호화된 데이터 크기: {len(envelope_json)} bytes")
+    print("\n=== 암호화된 데이터 ===")
+    print(envelope_json)
 
     # 복호화
     decrypted_data, decryption_time = await decryption(envelope_json, kms_client)
