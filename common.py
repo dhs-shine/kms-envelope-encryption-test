@@ -118,9 +118,9 @@ async def parse_envelope(envelope_json: str):
     
     # 암호화된 데이터에서 IV, 태그, 암호문 추출
     encrypted_data = base64.b64decode(encrypted_data_b64)
-    iv = encrypted_data[:16]
-    tag = encrypted_data[16:32]
-    ciphertext = encrypted_data[32:]
+    iv = encrypted_data[:12]
+    tag = encrypted_data[12:28]
+    ciphertext = encrypted_data[28:]
     
     return ciphertext, encrypted_dek, iv, tag, key_id
 
@@ -170,7 +170,7 @@ async def encryption(data_to_encrypt_bytes: bytes, kms_client: KMSClient, key_id
     dek_ciphertext, dek_plaintext = await kms_client.generate_dek(key_id)
     
     # 로컬 암호화 작업
-    iv = os.urandom(16)
+    iv = os.urandom(12)
     cipher = Cipher(
         algorithms.AES(dek_plaintext),
         modes.GCM(iv),
